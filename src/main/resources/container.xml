@@ -5,5 +5,5 @@
  http://www.springframework.org/schema/beans/spring-beans.xsd'>
  	<import resource="repositories.xml"/>
 	<import resource="services.xml"/>
- 	<import resource="presentaions.xml"/>
+ 	<import resource="presentations.xml"/>
  </beans>

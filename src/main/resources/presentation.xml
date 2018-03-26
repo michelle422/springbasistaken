@@ -4,7 +4,7 @@
  xmlns:context='http://www.springframework.org/schema/context'
  xsi:schemaLocation='http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd'>
- 	<bean id='persoonViewer' class='be.vdab.presentations.PersoonViewer'>
+ 	<bean id='persoonViewer' class='be.vdab.presentation.PersoonViewer'>
  		<constructor-arg>
  			<list>
  				<value>VOORNAAM</value>
@@ -12,6 +12,6 @@
  				<value>AANTAL_KINDEREN</value>
  			</list>
  		</constructor-arg>
- 		<constructor-arg ref="persoonService"/>
+ 		<constructor-arg ref="persoonServiceImpl"/>
  	</bean>
 </beans>

@@ -1,4 +1,4 @@
-package be.vdab.presentations;
+package be.vdab.presentation;
 
 import java.io.IOException;
 

@@ -2,15 +2,19 @@ package be.vdab;
 
 import java.io.IOException;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import be.vdab.presentations.PersoonViewer;
+import be.vdab.presentation.PersoonViewer;
+import be.vdab.presentation.PresentationConfig;
+import be.vdab.repositories.RepositoriesConfig;
+import be.vdab.services.ServicesConfig;
 
 public class Main {
 
 	public static void main(String[] args) {
-		try (ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("repositories.xml", "services.xml", "presentations.xml")) {
+		try (AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext
+					(RepositoriesConfig.class, ServicesConfig.class, PresentationConfig.class)) {
 			context.getBean(PersoonViewer.class).afbeelden();
 //				.afbeelden(Arrays.asList(new Persoon(1, "Eddy", "Wally", 1), 
 //										new Persoon(2, "Allan", "Norico", 1), 

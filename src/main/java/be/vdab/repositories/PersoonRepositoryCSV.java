@@ -21,8 +21,8 @@ public class PersoonRepositoryCSV implements PersoonRepository {
 		try (Scanner scanner = new Scanner(bestand)) {
 			while (scanner.hasNext()) {
 				String[] onderdelen = scanner.nextLine().split(",");
-				personen.add(new Persoon(Integer
-						.parseInt(onderdelen[0]), onderdelen[1], onderdelen[2], Integer.parseInt(onderdelen[3])));
+				personen.add(new Persoon(Integer.parseInt(onderdelen[0]), onderdelen[1], 
+						onderdelen[2], Integer.parseInt(onderdelen[3])));
 			}
 		}
 		return personen;

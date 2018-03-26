@@ -1,10 +1,14 @@
 package be.vdab.services;
 
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@ComponentScan
-public class ServicesConfig {
+import be.vdab.repositories.PersoonRepository;
 
+@Configuration
+public class ServicesConfig {
+	PersoonService persoonService(
+			@Qualifier("CSV") PersoonRepository persoonRepository) {
+		return new PersoonServiceImpl(persoonRepository);
+	}
 }
